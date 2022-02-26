@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Simple Calculator</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="#" name="form">
+            <input id="screen" class="screen" type="text" name='result' readonly>
+            <div class="buttons">
+                <input type="button" id="clear" class="button" value='C' onclick="form.result.value = ''">
+                <input type="button" class="button" value='/' onclick="form.result.value += '/'">
+                <input type="button" class="button" value='&times;' onclick="form.result.value += '&times'">
+                <input type="button" id="del" class="button" value='DEL'
+                    onclick="form.result.value = form.result.value.slice(0, -1)">
+                <input type="button" class="button" value='7' onclick="form.result.value += '7'">
+                <input type="button" class="button" value='8' onclick="form.result.value += '8'">
+                <input type="button" class="button" value='9' onclick="form.result.value += '9'">
+                <input type="button" class="button" value='-' onclick="form.result.value += '-'">
+                <input type="button" class="button" value='4' onclick="form.result.value += '4'">
+                <input type="button" class="button" value='5' onclick="form.result.value += '5'">
+                <input type="button" class="button" value='6' onclick="form.result.value += '6'">
+                <input type="button" class="button" value='+' onclick="form.result.value += '+'">
+                <input type="button" class="button" value='1' onclick="form.result.value += '1'">
+                <input type="button" class="button" value='2' onclick="form.result.value += '2'">
+                <input type="button" class="button" value='3' onclick="form.result.value += '3'">
+                <input type="button" class="button" value='.' onclick="form.result.value += '.'">
+                <input type="button" class="button" value='0' onclick="form.result.value += '0'">
+                <input type="button" id="equal" class="button" value='=' onclick="calc()">
+            </div>
+        </form>
+    </div>
+    <script>
+        function calc() {
+            try {
+                form.result.value = eval(form.result.value);
+            } catch {
+                form.result.value = 'ERROR'
+            }
+        }
+    </script>
+</body>
+
+</html>
